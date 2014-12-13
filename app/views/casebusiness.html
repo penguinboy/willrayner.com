@@ -1,0 +1,85 @@
+<div class="jumbotron">
+  <p class="lead">
+    business systems rebuild
+  </p>
+  <em>this is a reflection on some of the work I did for PaperCut Software</em>
+</div>
+<div class="section">
+    <div class="row">
+        <div class="offset2 col-xs-12 wordy-block">
+            <p>When I joined PaperCut Software as a full time employee in late 2011 I was scheduled on to work on a new section of their existing product. However, after several months working on this feature it became clear there were higher priorities in the organization.
+            </p>
+            <h5>The problem</h5>
+            <p>Orders for the product were submitted through the online ordering system. This system sent emails containing the order details in an XML serialized format. This XML was then manually copied into a license generator and the output was tweaked by an employee to create a license file. The license file was then manually sent out via an email. The order XML was then dumped in a dropbox folder shared between the 2 employees that were responsible for processing these orders.
+            </p>
+            <p>The process had many problems:
+                <ul>
+                    <li>Extremely manual. The task was mind-numbing and time consuming.</li>
+                    <li>Processing orders required intricate knowledge of many edge cases that could occur. This information was only known by the 2 operators</li>
+                    <li>Upgrade and license additions were performed by manually finding the customers original license and hand tweaking it to match what the customer had paid for</li>
+                    <li>Getting any sort of statistics required creating an excel sheet and manually entering all the order lines</li>
+                    <li>Tracking payments was done monthly in another excel sheet</li>
+                </ul>
+            </p>
+            <p>The biggest issue here was the lack of knowledge into what we were actually selling to customers. Only a single part-time employee was capable of manually creating a order report, and it was limited to an overall dollar sum of activity for the month. Critical business decisions were being made on gut feel due to the lack of information. While this worked when the company was made of 10-13 people, the process started to show it's weaknesses when the company upsized to 27 full time employees.</p>
+            <h5>Getting a solution</h5>
+            <p>When I recognized the situation we were in I took it upon myself to present a business case for rebuilding the systems involved. I created a set of scripts using node.js to analyse the several thousand order XML files in the company archive and cross reference the payment tracking excel sheets. With this data I was able to create a presentation that showed real and detailed progress of the company over the past 6 years.</p>
+            <p>This presentation provided an insight that had never been seen across the company ever. Product development decisions could be analysed for ROI, and many assumptions held by the cofounders and sales team were challenged.</p>
+            <p>The presentation also contained a road map for internal systems development that would solve the problems outlined above.</p>
+            <h5>Development</h5>
+            <p>The next 4 months developing a system that would work towards resolving the issue. I collaborated with others across the company to understand exactly what the user stories were. As each use case was satisfied we were able to transition to the new system gradually. By the end of the first phase of the project we were able to:
+                <ul>
+                    <li>Manage a queue of unprocessed orders</li>
+                    <li>Search previously placed orders, including order placed in the last 3 years</li>
+                    <li>Track payments on orders</li>
+                    <li>Download or resend previously issued licenses</li>
+                    <li>Run queries on the order database to get an idea of how we tracking</li>
+                </ul>
+            </p>
+            <h5>Real benefits</h5>
+            <p>While the project had eliminated most of the manual work, we were still essentially on feature parity with the old system. However, the system created a base point for further development. Many people across the company saw the potential and started sending in feature request. I was tasked with prioritising and implementing these requests, but was instructed to limit development to 20% of my work week, leaving the rest of the time for core product development.</p>
+
+            <p>6 months from the initial go live date for the project, the system now:
+                <ul>
+                    <li>Manages 1000 or so reseller accounts.</li>
+                    <li>Provides an interface for slicing/dicing order data, allowing for on-demand reporting.</li>
+                    <li>Allows resellers to view their own order history, including a tracking system for support renewals</li>
+                    <li>Has an API for real time order income and quantity over a given time period</li>
+                    <li>Handles currency conversion for orders to provide all analytics data in AUD</li>
+                    <li>Shows a facebook-like real time feed of reseller and order activity within the company</li>
+                    <li>Logs all actions within the system into the database to make it auditable</li>
+                    <li>Is responsively designed, allowing for use on mobile devices</li>
+                    <li>Authenticates users with their Google Apps account</li>
+                    <li>Has access control features to stop misuse</li>
+                </ul>
+            </p>
+
+            <h5>The technical details</h5>
+            <ul>
+                <li>Java MVC web application running on Google App Engine</li>
+                <li>Uses RestEasy for Controllers and API</li>
+                <li>Uses Hibernate ORM and Google Cloud SQL for relational data</li>
+                <li>Uses Google's NoSql Datastore for exchange rates and activity feed</li>
+                <li>Uses Memcache to cache any information that other systems rely on</li>
+            </ul>
+            <h5>Lessons learnt</h5>
+            <h6>Business</h6>
+            <ul>
+                <li>When scaling a company, have the systems in place to share information and workload</li>
+                <li>Aggressively limit the scope of a large project. This helps manage expectations, and prevents blowouts caused by the unknowns</li>
+                <li>Organizational buy-in is crucial when management is not convinced of something</li>
+                <li>The loudest users are not always right. Feedback should influence your decisions; data should make them.
+            </ul>
+            <h6>Technical</h6>
+            <ul>
+                <li>Building a business critical system means 100% uptime is a must. This requires careful development</li>
+                <li>A good <a href="http://nvie.com/posts/a-successful-git-branching-model/">branching strategy</a> makes a huge difference</li>
+                <li>Profiling is better than guessing when identify slow areas of the application (Looking at you Hibernate)</li>
+                <li>Cache anything that is high traffic, your users will thank you</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row section centered">
+    <em>Think we should talk? Feel free to <a href="mailto:raynerw@gmail.com">email me</a></em>
+</div>

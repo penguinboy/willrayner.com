@@ -1,0 +1,57 @@
+<div class="jumbotron">
+  <p class="lead">
+    atlassian
+  </p>
+  <em>a brief overview</em>
+</div>
+
+<div class="section">
+    <div class="row project-details">
+        <div class="col-xs-4">
+            <h4>Billing core rewrite</h4>
+        </div>
+        <div class="col-xs-8 project-description">
+            <p>
+                Rewrote large portions of Atlassian's internal pricing and order processing monolith system. The new implementation allowed for a more flexible pricing configuration. This included pricing structure grandfathering, multiple contract term lengths and a multiple APIs and tools for <a href="http://marketplace.atlassian.com">marketplace vendors</a> to manage product pricing.
+            </p>
+            <p>
+                This work laid the foundation for further projects like experimental pricing for customer subsets and usage based pricing.
+            <p>
+        </div>
+    </div>
+    <div class="row project-details">
+        <div class="col-xs-4">
+            <h4>Microservice architecture</h4>
+        </div>
+        <div class="col-xs-8 project-description">
+            <p>
+                Extracted several system components out of the core billing monolith application. Where possible these systems would run in parallel with the existing implementation in order to verify their behaviour and performance. This architecture helped our rapidly growing team by reducing the cost of onboarding new team member by reducing the domain knowledge required to work on a subset of functionality.
+            </p>
+            <p>
+                New systems are now created as a microservice by default, allowing teams to use the best tools for the job.
+            </p>
+        </div>
+    </div>
+    <div class="row project-details">
+        <div class="col-xs-4">
+            <h4>Continuous integration</h4>
+        </div>
+        <div class="col-xs-8 project-description">
+            <p>
+                During the growth from 8 to over 40 developers we had to drastically change the way we deployed our applications. We implemented a new functional test suite to cover the large legacy monolith system. 10 years of slapdash development had resulted in huge implementation detail unknowns.
+            </p>
+            <p>
+                The new end to end testing suite helped build deployment confidence. The build times for these services were drastically reduced, which provided quicker feedback for developers.
+            </p>
+            <p>
+                Microservices had to be deployable from master at any time, requiring a set comprehensive unit and functional test suites.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="section centered">
+    <em>Think we should talk? Feel free to <a href="mailto:raynerw@gmail.com">email me</a></em>
+</div>
+<div class="section centered">
+    <em>I'm not always programming, check out <a href="#/sparetime">what I do with my spare time</a></em>
+</div>

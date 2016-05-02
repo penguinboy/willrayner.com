@@ -1,18 +1,19 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: AtlassianCtrl', function () {
 
   // load the controller's module
   beforeEach(module('willraynercomApp'));
 
-  var MainCtrl,
+  var AtlassianCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    AtlassianCtrl = $controller('AtlassianCtrl', {
       $scope: scope
+      // place here mocked dependencies
     });
   }));
 });

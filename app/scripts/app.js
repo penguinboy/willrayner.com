@@ -35,6 +35,11 @@ angular
         templateUrl: 'views/sparetime.html',
         controller: 'MainCtrl'
       })
+      .when('/atlassian', {
+        templateUrl: 'views/atlassian.html',
+        controller: 'AtlassianCtrl',
+        controllerAs: 'atlassian'
+      })
       .otherwise({
         redirectTo: '/'
       });
